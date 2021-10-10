@@ -12,6 +12,10 @@ def imgRename(source, destin):
     input_list = os.listdir(source)
 
     os.system('cls')
+
+    d = 1
+    n = 1
+    t = 1
     
     for i in range(len(input_list)):
 
@@ -26,7 +30,15 @@ def imgRename(source, destin):
 #######################################################################
         # Output file path
         ## Here you can change how image should be renamed.
-        op_file_path = os.path.join(destin, "D_"+str(i+1)+".jpg")
+        if("D" in img_name):
+            op_file_path = os.path.join(destin, "D_"+str(d)+".jpg")
+            d += 1
+        elif("N" in img_name):
+            op_file_path = os.path.join(destin, "N_"+str(n)+".jpg")
+            n += 1
+        if("T" in img_name):
+            op_file_path = os.path.join(destin, "T_"+str(t)+".jpg")
+            t += 1
 #######################################################################
 
         # write images
